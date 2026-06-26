@@ -1,0 +1,249 @@
+/* === Страница «Чемпион» === */
+
+.cp-search-wrap {
+  position: relative;
+  max-width: 440px;
+}
+.cp-search {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0 var(--space-3);
+  height: var(--search-h);
+  color: var(--text-dim);
+}
+.cp-search:focus-within {
+  border-color: var(--accent);
+}
+.cp-search input {
+  flex: 1;
+  min-width: 0;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-family: inherit;
+  font-size: var(--fs-13);
+}
+.cp-suggest {
+  position: absolute;
+  z-index: 5;
+  top: calc(var(--search-h) + 4px);
+  left: 0;
+  right: 0;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.cp-suggest-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  background: none;
+  border: none;
+  color: var(--text);
+  font-family: inherit;
+  font-size: var(--fs-13);
+  cursor: pointer;
+  text-align: left;
+}
+.cp-suggest-item:hover {
+  background: var(--surface);
+}
+.cp-suggest-item img {
+  border-radius: 4px;
+}
+
+.cp-head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.cp-head-id {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+.cp-head-icon {
+  border-radius: var(--radius-sm);
+}
+.cp-head-name {
+  font-size: var(--fs-20);
+  font-weight: var(--fw-medium);
+}
+.cp-roles {
+  display: flex;
+  gap: var(--space-1);
+}
+.cp-role-tab {
+  padding: 2px var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: var(--fs-12);
+  cursor: pointer;
+}
+.cp-role-tab.is-active {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.cp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+@media (max-width: 900px) {
+  .cp-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cp-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.cp-row {
+  display: grid;
+  grid-template-columns: 28px 1fr auto auto;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 3px var(--space-2);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-13);
+}
+.cp-row:hover {
+  background: var(--surface-2);
+}
+.cp-icon {
+  border-radius: 4px;
+}
+.cp-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.cp-role {
+  font-size: var(--fs-11);
+  color: var(--text-dim);
+}
+.cp-wr {
+  font-variant-numeric: tabular-nums;
+}
+.cp-wr--high {
+  color: var(--win);
+}
+.cp-wr--mid {
+  color: var(--text-muted);
+}
+.cp-wr--low {
+  color: var(--loss);
+}
+.cp-games {
+  font-size: var(--fs-11);
+  color: var(--text-dim);
+}
+
+.cp-slot {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--border);
+}
+.cp-slot:last-child {
+  border-bottom: none;
+}
+.cp-slot-label {
+  width: 96px;
+  flex-shrink: 0;
+  font-size: var(--fs-12);
+  color: var(--text-muted);
+  padding-top: 6px;
+}
+
+.cp-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+.cp-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+.cp-item img {
+  border-radius: 4px;
+  background: var(--bg);
+}
+.cp-item-wr {
+  font-size: var(--fs-11);
+}
+.cp-item-games {
+  font-size: var(--fs-11);
+  color: var(--text-dim);
+}
+
+/* === Руны === */
+.cp-rune-groups {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.cp-rune-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.cp-rune-group-title {
+  font-size: var(--fs-12);
+  color: var(--text-muted);
+}
+.cp-runes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+.cp-rune {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  width: 88px;
+  text-align: center;
+}
+.cp-rune-icon {
+  border-radius: 50%;
+  background: var(--bg);
+}
+.cp-rune-icon--ph {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+}
+.cp-rune-name {
+  font-size: var(--fs-11);
+  color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+.cp-rune-wr {
+  font-size: var(--fs-11);
+}
+.cp-rune-games {
+  font-size: var(--fs-11);
+  color: var(--text-dim);
+}

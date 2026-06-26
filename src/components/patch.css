@@ -1,0 +1,23 @@
+.patch-selector {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.patch-selector__label {
+  color: var(--text-muted, #8a8f98);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 11px;
+}
+
+.patch-selector__select {
+  background: var(--surface-2, #1c1f26);
+  color: var(--text, #e6e6e6);
+  border: 1px solid var(--border, #2c2f36);
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 13px;
+  cursor: pointer;
+}

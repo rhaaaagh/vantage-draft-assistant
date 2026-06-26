@@ -1,0 +1,156 @@
+/* =========================================================================
+   Единый каркас приложения. Рендерится ОДИН раз, на всех вкладках одинаков.
+   При навигации меняется только .shell__content — хедер, бренд и сайдбар
+   не перерисовываются и не меняют размер.
+   Все размеры — из токенов. Переформатирование только на 2 брейкпоинтах.
+   ========================================================================= */
+
+.shell {
+  display: grid;
+  grid-template-columns: var(--sidebar-w) minmax(0, 1fr);
+  grid-template-rows: var(--header-h) minmax(0, 1fr);
+  grid-template-areas:
+    'brand header'
+    'nav   body';
+  height: 100vh;
+  background: var(--bg);
+}
+
+/* --- Бренд (над сайдбаром, фикс. высота = хедер) --- */
+.shell__brand {
+  grid-area: brand;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0 var(--space-4);
+  height: var(--header-h);
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+.shell__brand-mark {
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-sm);
+  background: var(--accent);
+  flex-shrink: 0;
+}
+.shell__brand-name {
+  font-size: var(--fs-14);
+  font-weight: var(--fw-medium);
+  color: var(--text);
+  white-space: nowrap;
+}
+
+/* --- Хедер: пустая верхняя полоса (поиск теперь внутри вкладки Профиль). --- */
+.shell__header {
+  grid-area: header;
+  height: var(--header-h);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 16px;
+}
+
+/* --- Сайдбар --- */
+.shell__nav {
+  grid-area: nav;
+  border-right: 1px solid var(--border);
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow-y: auto;
+}
+.shell__nav-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  height: 38px;
+  border-radius: var(--radius-sm);
+  border: none;
+  background: none;
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: var(--fs-13);
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  white-space: nowrap;
+  transition: background 120ms ease, color 120ms ease;
+}
+.shell__nav-item:hover {
+  color: var(--text);
+  background: var(--surface);
+}
+.shell__nav-item.is-active {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.shell__nav-item svg {
+  flex-shrink: 0;
+}
+
+/* --- Тело: контент + опциональный правый рейл --- */
+.shell__body {
+  grid-area: body;
+  overflow-y: auto;
+}
+.shell__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-5);
+  padding: var(--space-5);
+  max-width: 1280px;
+  margin: 0 auto;
+  align-items: start;
+}
+.shell__layout--rail {
+  grid-template-columns: minmax(0, 1fr) var(--rail-w);
+}
+.shell__content {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.shell__rail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  position: sticky;
+  top: var(--space-5);
+}
+
+/* ===== Брейкпоинт 1: ≤1200px — прячем правый рейл ===== */
+@media (max-width: 1200px) {
+  .shell__layout--rail {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .shell__rail {
+    display: none;
+  }
+}
+
+/* ===== Брейкпоинт 2: ≤960px — сайдбар сворачивается в иконки ===== */
+@media (max-width: 960px) {
+  .shell {
+    grid-template-columns: var(--sidebar-w-collapsed) minmax(0, 1fr);
+  }
+  .shell__brand {
+    justify-content: center;
+    padding: 0;
+  }
+  .shell__brand-name {
+    display: none;
+  }
+  .shell__nav-item {
+    justify-content: center;
+    padding: var(--space-2);
+  }
+  .shell__nav-item span {
+    display: none;
+  }
+}

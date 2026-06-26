@@ -1,0 +1,162 @@
+/* MetaTierList — мета тир-лист чемпионов (тёмная тема, CSS-переменные из App.css) */
+
+.meta-tier-view {
+  width: 100%;
+  padding: var(--space-sm) 0;
+}
+
+.meta-tier-title {
+  margin: 0 0 var(--space-xs) 0;
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--text-primary);
+}
+
+.meta-tier-subtitle {
+  margin: 0 0 var(--space-lg) 0;
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+}
+
+/* Фильтры */
+.meta-tier-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+
+.meta-tier-filter-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+}
+
+.meta-tier-select {
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  border: var(--border-subtle);
+  background: var(--bg-page);
+  color: var(--text-primary);
+  font-size: var(--text-sm);
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.meta-tier-select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.2);
+}
+
+/* Состояния загрузки и пустого экрана */
+.meta-tier-loading {
+  color: var(--text-muted);
+  font-size: var(--text-base);
+  margin: var(--space-md) 0;
+}
+
+.meta-tier-empty {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2xl);
+  border: var(--border-subtle);
+  color: var(--text-muted);
+  font-size: var(--text-base);
+  line-height: 1.5;
+}
+
+.meta-tier-empty p {
+  margin: 0;
+}
+
+/* Таблица */
+.meta-tier-table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
+  border: var(--border-subtle);
+  background: var(--bg-card);
+  box-shadow: var(--shadow-card);
+}
+
+.meta-tier-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-base);
+}
+
+.meta-tier-table th,
+.meta-tier-table td {
+  padding: var(--space-sm) var(--space-md);
+  text-align: left;
+  border-bottom: var(--border-subtle);
+}
+
+.meta-tier-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.meta-tier-table th {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  font-weight: var(--font-semibold);
+  font-size: var(--text-sm);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.meta-tier-table tbody tr:hover {
+  background: var(--bg-card-hover);
+}
+
+/* Колонка # */
+.meta-tier-rank {
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+  width: 2.5rem;
+}
+
+/* Чемпион (иконка + имя) */
+.meta-tier-champ {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.meta-tier-champ-icon {
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Кликабельное имя чемпиона → открывает страницу «Чемпион» */
+.meta-tier-champ-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+}
+
+.meta-tier-champ-btn:hover span {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* Винрейт — выделяем цветом */
+.meta-tier-winrate {
+  font-weight: var(--font-semibold);
+  color: var(--success);
+}
+
+.meta-tier-sortable { cursor: pointer; user-select: none; white-space: nowrap; }
+.meta-tier-sortable:hover { color: var(--accent, #58a6ff); }

@@ -1,0 +1,263 @@
+/* === Подбор пика (движок рекомендаций) === */
+
+.ph-row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+.ph-label {
+  width: 80px;
+  flex-shrink: 0;
+  font-size: var(--fs-12);
+  color: var(--text-muted);
+  padding-top: 6px;
+}
+.ph-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+  flex: 1;
+}
+.ph-roles {
+  display: flex;
+  gap: var(--space-1);
+}
+.ph-role-tab {
+  padding: 4px var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: var(--fs-12);
+  cursor: pointer;
+}
+.ph-role-tab.is-active {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.ph-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+}
+.ph-chip {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 2px var(--space-2);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--text);
+  font-family: inherit;
+  font-size: var(--fs-12);
+  cursor: pointer;
+}
+.ph-chip img {
+  border-radius: 50%;
+}
+.ph-chip-role {
+  color: var(--text-dim);
+  font-size: var(--fs-11);
+}
+.ph-chip-x {
+  color: var(--text-dim);
+}
+.ph-chip:hover .ph-chip-x {
+  color: var(--accent);
+}
+
+.ph-adder {
+  display: flex;
+  gap: var(--space-2);
+}
+.ph-role-sel {
+  background: var(--surface-2);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: var(--fs-12);
+  padding: 0 var(--space-2);
+}
+.ph-adder-search {
+  position: relative;
+  flex: 1;
+  max-width: 240px;
+}
+.ph-adder-search input {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-family: inherit;
+  font-size: var(--fs-13);
+  padding: 6px var(--space-3);
+  outline: none;
+}
+.ph-adder-search input:focus {
+  border-color: var(--accent);
+}
+.ph-suggest {
+  position: absolute;
+  z-index: 5;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.ph-suggest-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  width: 100%;
+  padding: var(--space-1) var(--space-2);
+  background: none;
+  border: none;
+  color: var(--text);
+  font-family: inherit;
+  font-size: var(--fs-13);
+  cursor: pointer;
+  text-align: left;
+}
+.ph-suggest-item:hover {
+  background: var(--surface);
+}
+.ph-suggest-item img {
+  border-radius: 4px;
+}
+
+.ph-go {
+  margin: var(--space-2) 0 var(--space-3);
+  padding: var(--space-2) var(--space-5);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-sm);
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-family: inherit;
+  font-size: var(--fs-13);
+  font-weight: var(--fw-medium);
+  cursor: pointer;
+}
+.ph-go:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.ph-recs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+.ph-rec {
+  display: grid;
+  grid-template-columns: 24px 36px 1fr 160px;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+}
+.ph-rec:hover {
+  background: var(--surface-2);
+}
+.ph-rec-rank {
+  color: var(--text-dim);
+  text-align: center;
+}
+.ph-rec-icon {
+  border-radius: var(--radius-sm);
+}
+.ph-rec-main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.ph-rec-name {
+  font-size: var(--fs-13);
+  color: var(--text);
+}
+.ph-rec-reason {
+  font-size: var(--fs-11);
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ph-rec-score {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.ph-rec-bar {
+  flex: 1;
+  height: 6px;
+  background: var(--surface-2);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.ph-rec-bar-fill {
+  height: 100%;
+  background: var(--accent);
+}
+
+/* === Сборка зафиксированного чемпиона (живой драфт) === */
+.ph-build {
+  margin-top: var(--space-4);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.ph-build-head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.ph-build-champ {
+  border-radius: var(--radius-sm);
+}
+.ph-build-title {
+  font-size: var(--fs-13);
+  font-weight: var(--fw-medium);
+  color: var(--text);
+}
+.ph-build-role {
+  font-size: var(--fs-11);
+  color: var(--text-dim);
+}
+.ph-build-line {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+.ph-build-label {
+  width: 64px;
+  flex-shrink: 0;
+  font-size: var(--fs-12);
+  color: var(--text-muted);
+}
+.ph-build-items,
+.ph-build-path {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+}
+.ph-build-item {
+  border-radius: var(--radius-sm);
+}
+.ph-build-arrow {
+  color: var(--text-dim);
+  font-size: var(--fs-13);
+  padding: 0 2px;
+}

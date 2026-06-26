@@ -1,0 +1,56 @@
+.minimap {
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--space-2, 8px);
+  /* Перетаскивание ползунка не должно выделять подписи/таскать карту. */
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.minimap-svg image {
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+.minimap-caption {
+  font-size: var(--fs-12, 12px);
+  color: var(--text-dim, #9aa);
+}
+
+.minimap-svg {
+  border-radius: var(--radius-sm, 6px);
+  border: 1px solid var(--border, #2a2f3a);
+  display: block;
+  background: #0a0e14;
+}
+
+.minimap-dim {
+  fill: rgba(6, 10, 18, 0.35);
+}
+
+.minimap-point-label {
+  fill: #fff;
+  font-weight: 700;
+  paint-order: stroke;
+  stroke: rgba(0, 0, 0, 0.65);
+  stroke-width: 2px;
+  pointer-events: none;
+  user-select: none;
+}
+
+.minimap-slider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2, 8px);
+}
+
+.minimap-slider input[type='range'] {
+  flex: 1;
+}
+
+.minimap-slider-label {
+  font-size: var(--fs-12, 12px);
+  color: var(--text-muted, #ccd);
+  min-width: 56px;
+  text-align: right;
+}

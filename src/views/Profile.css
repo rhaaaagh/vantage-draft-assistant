@@ -1,0 +1,265 @@
+/* === Профиль === только то, чего нет в дизайн-системе (ui.css). === */
+
+/* Поле поиска на самом экране Профиля */
+.profile-search {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0 var(--space-2) 0 var(--space-3);
+  height: var(--search-h);
+  max-width: 440px;
+  transition: border-color 120ms ease;
+}
+.profile-search:focus-within {
+  border-color: var(--accent);
+}
+.profile-search input {
+  flex: 1;
+  min-width: 0;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-family: inherit;
+  font-size: var(--fs-13);
+}
+.profile-search input::placeholder {
+  color: var(--text-dim);
+}
+.profile-search__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: none;
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: color 120ms ease, background 120ms ease;
+}
+.profile-search__btn:hover {
+  color: var(--text);
+  background: var(--surface-2);
+}
+
+/* Пустое состояние / загрузка / ошибка до первого поиска */
+.profile-empty {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-2);
+}
+.profile-empty__title {
+  margin: 0;
+  font-size: var(--fs-16);
+  font-weight: var(--fw-medium);
+  color: var(--text);
+}
+.profile-empty p {
+  margin: 0;
+}
+
+/* Шапка профиля: слева ник + статы, справа донат винрейта */
+.profile-head {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+  flex-wrap: wrap;
+}
+.profile-head__main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-width: 0;
+}
+.profile-head__wr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+.profile-head__wr-legend {
+  display: flex;
+  gap: var(--space-1);
+  font-size: var(--fs-12);
+  font-variant-numeric: tabular-nums;
+}
+.profile-head__wr-w {
+  color: var(--win);
+}
+.profile-head__wr-l {
+  color: var(--loss);
+}
+.profile-head__wr-sep {
+  color: var(--text-dim);
+}
+.profile-head__id {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+.profile-head__name {
+  font-size: var(--fs-20);
+  font-weight: var(--fw-medium);
+  color: var(--text);
+}
+.profile-head__level {
+  font-size: var(--fs-12);
+  color: var(--text-muted);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 2px var(--space-2);
+}
+
+/* Мастерство чемпионов */
+.profile-mastery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: var(--space-2);
+}
+.profile-mastery__item {
+  display: grid;
+  grid-template-columns: 32px 1fr auto;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+}
+.profile-mastery__icon {
+  border-radius: var(--radius-sm);
+}
+.profile-mastery__name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: var(--fs-13);
+}
+.profile-mastery__lvl {
+  font-size: var(--fs-11);
+  color: var(--text-dim);
+}
+.profile-mastery__pts {
+  grid-column: 2 / 4;
+  font-size: var(--fs-11);
+  color: var(--accent);
+}
+
+/* История игр */
+.profile-history {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.profile-game {
+  display: flex;
+  flex-direction: column;
+}
+.profile-game__detail {
+  display: flex;
+  flex-direction: column;
+}
+.profile-game__more {
+  align-self: flex-end;
+  margin-top: var(--space-1);
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: var(--fs-12);
+  cursor: pointer;
+  transition: color 120ms ease, border-color 120ms ease;
+}
+.profile-game__more:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* Развёрнутая детальная карточка матча */
+.pd {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-top: none;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+}
+.pd-team {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+.pd-team__head {
+  font-size: var(--fs-11);
+  font-weight: var(--fw-medium);
+  margin-bottom: var(--space-1);
+}
+.pd-team__head--blue {
+  color: var(--text-muted);
+}
+.pd-team__head--red {
+  color: var(--accent);
+}
+.pd-player {
+  display: grid;
+  grid-template-columns: 22px 26px 1fr auto auto;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 3px var(--space-2);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-12);
+  color: var(--text-muted);
+}
+.pd-player.is-target {
+  background: var(--accent-soft);
+  color: var(--text);
+}
+.pd-player__icon {
+  border-radius: 4px;
+}
+.pd-player__role {
+  font-size: var(--fs-11);
+  color: var(--text-dim);
+}
+.pd-player__name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.pd-player__kda {
+  font-variant-numeric: tabular-nums;
+}
+.pd-player__cs {
+  color: var(--text-dim);
+  font-size: var(--fs-11);
+}
+.pd-player__items {
+  display: flex;
+  gap: 2px;
+}
+.pd-player__items img {
+  border-radius: 3px;
+  background: var(--bg);
+}
+
+@media (max-width: 760px) {
+  .pd {
+    grid-template-columns: 1fr;
+  }
+}

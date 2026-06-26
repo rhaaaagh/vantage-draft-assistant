@@ -1,0 +1,183 @@
+/* =========================================================================
+   Дизайн-система — единственный источник истины по теме.
+   Тёмный минималистичный дашборд, один красный акцент, карточная сетка.
+   Никаких градиентов / glow / золота / капсул. Все экраны берут цвета,
+   отступы и радиусы ТОЛЬКО отсюда, без хардкодов по месту.
+   ========================================================================= */
+
+:root {
+  /* --- Поверхности --- */
+  --bg: #0e0f13;
+  --surface: #16171d;
+  --surface-2: #1c1e26;
+  --border: #262833;
+
+  /* --- Текст --- */
+  --text: #ecedf1;
+  --text-muted: #8a8d99;
+  --text-dim: #5a5d69;
+
+  /* --- Акцент (ровно один) --- */
+  --accent: #e13b43;
+  --accent-soft: rgba(225, 59, 67, 0.12);
+
+  /* --- Семантика: только для win/loss и винрейта --- */
+  --win: #3fb950;
+  --loss: #e5484d;
+  --warn: #d8a657; /* служебные предупреждения (истёк ключ и т.п.), не для статов */
+
+  /* --- Радиусы --- */
+  --radius: 12px;
+  --radius-sm: 8px;
+
+  /* --- Отступы (шаг 4px) --- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  /* --- Типографика: один шрифт, два начертания (400 / 500) --- */
+  --font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  --fw-body: 400;
+  --fw-medium: 500;
+
+  --fs-11: 11px;
+  --fs-12: 12px;
+  --fs-13: 13px;
+  --fs-14: 14px;
+  --fs-16: 16px;
+  --fs-20: 20px;
+  --fs-28: 28px;
+
+  /* --- Геометрия лейаута --- */
+  --sidebar-w: 220px;
+  --sidebar-w-collapsed: 60px;
+  --rail-w: 260px;
+  --header-h: 56px;
+  --search-h: 40px;
+  --avatar: 32px;
+
+  /* Брейкпоинты лейаута (для справки; в CSS значения дублируются в @media). */
+  --bp-rail: 1200px;
+  --bp-sidebar: 960px;
+
+  /* ---------------------------------------------------------------------
+     Совместимость со старыми вкладками (пока не мигрированы).
+     Старые имена переменных указывают на новую палитру — так легаси-экраны
+     сразу получают согласованные цвета, и их можно переписывать по одному.
+     --------------------------------------------------------------------- */
+  --bg-page: var(--bg);
+  --bg-card: var(--surface);
+  --bg-card-hover: var(--surface-2);
+  --bg-elevated: var(--surface-2);
+  --border-subtle: 1px solid var(--border);
+  --border-strong: 1px solid var(--border);
+  --shadow-card: none;
+  --shadow-elevated: none;
+  --text-primary: var(--text);
+  --text-secondary: var(--text-muted);
+  --accent-hover: #ef5a61;
+  --success: var(--win);
+  --danger: var(--loss);
+  --warning: var(--warn);
+  --space-xs: var(--space-1);
+  --space-sm: var(--space-2);
+  --space-md: var(--space-3);
+  --space-lg: var(--space-4);
+  --space-xl: var(--space-5);
+  --space-2xl: var(--space-6);
+  --radius-md: var(--radius-sm);
+  --radius-lg: var(--radius);
+  --font-sans: var(--font);
+  --text-xs: var(--fs-12);
+  --text-sm: var(--fs-13);
+  --text-base: var(--fs-14);
+  --text-lg: var(--fs-16);
+  --text-xl: var(--fs-20);
+  --text-2xl: var(--fs-28);
+  --font-medium: 500;
+  --font-semibold: 500; /* в новой теме нет 600/700 — заголовки = 500 */
+  --font-bold: 500;
+}
+
+/* --- База --- */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-weight: var(--fw-body);
+  font-size: var(--fs-14);
+  line-height: 1.45;
+  color: var(--text);
+  background: var(--bg);
+  /* Перебиваем старый центрирующий лейаут и радиальный градиент. */
+  background-image: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  /* Старый App.css центрировал контент с max-width — для дашборда не нужно. */
+  display: block;
+  padding: 0;
+  min-height: 100%;
+  place-items: stretch;
+}
+
+/* Все числа в статах и таблицах — моноширинные цифры. */
+.num,
+table td,
+table th {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum' 1;
+}
+
+/* Заголовки — то же начертание 500, обычный регистр, без CAPS. */
+h1,
+h2,
+h3,
+h4 {
+  font-weight: var(--fw-medium);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* Фокус — тонкое акцентное кольцо, без толстого нативного аутлайна. */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+::selection {
+  background: var(--accent-soft);
+}
+
+/* Скроллбар в тон теме. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 999px;
+  border: 2px solid var(--bg);
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}

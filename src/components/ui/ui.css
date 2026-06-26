@@ -1,0 +1,394 @@
+/* =========================================================================
+   Базовые переиспользуемые компоненты дизайн-системы.
+   Верстаются один раз здесь, используются на всех экранах.
+   Только токены из theme/tokens.css — ни одного хардкода цвета/радиуса.
+   ========================================================================= */
+
+/* --- Card --- */
+.ui-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+}
+
+.ui-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.ui-card__title {
+  margin: 0;
+  font-size: var(--fs-14);
+  font-weight: var(--fw-medium);
+  color: var(--text);
+}
+
+.ui-card__action {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.ui-card--flush {
+  padding: 0;
+}
+
+/* --- Stat / StatRow --- */
+.ui-statrow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+}
+
+.ui-stat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.ui-stat__label {
+  font-size: var(--fs-11);
+  color: var(--text-muted);
+  font-weight: var(--fw-body);
+}
+
+.ui-stat__value {
+  font-size: var(--fs-20);
+  font-weight: var(--fw-medium);
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+
+.ui-stat--accent .ui-stat__value {
+  color: var(--accent);
+}
+.ui-stat--win .ui-stat__value {
+  color: var(--win);
+}
+.ui-stat--loss .ui-stat__value {
+  color: var(--loss);
+}
+
+.ui-stat__sub {
+  font-size: var(--fs-12);
+  color: var(--text-dim);
+}
+
+/* --- Tabs (подчёркивание активного, без капсул) --- */
+.ui-tabs {
+  display: flex;
+  gap: var(--space-4);
+  border-bottom: 1px solid var(--border);
+}
+
+.ui-tab {
+  appearance: none;
+  background: none;
+  border: none;
+  padding: var(--space-3) 0;
+  margin-bottom: -1px;
+  font-family: inherit;
+  font-size: var(--fs-13);
+  color: var(--text-muted);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color 120ms ease, border-color 120ms ease;
+}
+
+.ui-tab:hover {
+  color: var(--text);
+}
+
+.ui-tab.is-active {
+  color: var(--text);
+  border-bottom-color: var(--accent);
+  font-weight: var(--fw-medium);
+}
+
+/* --- Кнопки --- */
+.ui-btn {
+  appearance: none;
+  font-family: inherit;
+  font-size: var(--fs-13);
+  font-weight: var(--fw-medium);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-4);
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+
+.ui-btn--primary {
+  background: var(--accent);
+  color: #fff;
+}
+.ui-btn--primary:hover:not(:disabled) {
+  background: #ef5a61;
+}
+
+.ui-btn--ghost {
+  background: var(--surface-2);
+  border-color: var(--border);
+  color: var(--text);
+}
+.ui-btn--ghost:hover:not(:disabled) {
+  border-color: var(--text-dim);
+}
+
+.ui-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* --- Input --- */
+.ui-input {
+  font-family: inherit;
+  font-size: var(--fs-13);
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-3);
+  outline: none;
+  transition: border-color 120ms ease;
+}
+.ui-input::placeholder {
+  color: var(--text-dim);
+}
+.ui-input:focus {
+  border-color: var(--accent);
+}
+
+/* --- MatchRow --- */
+.ui-matchrow {
+  display: grid;
+  grid-template-columns: 4px 1.7fr 1fr 0.9fr 0.9fr 1.6fr auto;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3) var(--space-2) 0;
+  background: var(--surface-2);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  cursor: pointer;
+  transition: background 120ms ease;
+  width: 100%;
+  text-align: left;
+  border: none;
+  font-family: inherit;
+  color: var(--text);
+}
+.ui-matchrow:hover {
+  background: var(--surface);
+  outline: 1px solid var(--border);
+}
+.ui-matchrow__stripe {
+  align-self: stretch;
+  width: 4px;
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+}
+.ui-matchrow--win .ui-matchrow__stripe {
+  background: var(--win);
+}
+.ui-matchrow--loss .ui-matchrow__stripe {
+  background: var(--loss);
+}
+
+.ui-matchrow__champ {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-width: 0;
+}
+.ui-matchrow__champ img {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+  background: var(--bg);
+}
+.ui-matchrow__champ-meta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.ui-matchrow__result {
+  font-size: var(--fs-12);
+  font-weight: var(--fw-medium);
+}
+.ui-matchrow--win .ui-matchrow__result {
+  color: var(--win);
+}
+.ui-matchrow--loss .ui-matchrow__result {
+  color: var(--loss);
+}
+.ui-matchrow__champ-name {
+  font-size: var(--fs-13);
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ui-cell {
+  display: flex;
+  flex-direction: column;
+  font-variant-numeric: tabular-nums;
+}
+.ui-cell__main {
+  font-size: var(--fs-13);
+  color: var(--text);
+}
+.ui-cell__sub {
+  font-size: var(--fs-11);
+  color: var(--text-dim);
+}
+.ui-matchrow__deaths {
+  color: var(--loss);
+}
+
+.ui-matchrow__items {
+  display: flex;
+  gap: 2px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.ui-matchrow__items img {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  background: var(--bg);
+}
+
+.ui-matchrow__time {
+  font-size: var(--fs-12);
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* --- ChampList --- */
+.ui-champlist {
+  display: flex;
+  flex-direction: column;
+}
+.ui-champlist__row {
+  display: grid;
+  grid-template-columns: 28px 1fr auto auto;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--border);
+}
+.ui-champlist__row:last-child {
+  border-bottom: none;
+}
+.ui-champlist__icon {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+}
+.ui-champlist__name {
+  font-size: var(--fs-13);
+  color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ui-champlist__games {
+  font-size: var(--fs-12);
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+}
+.ui-champlist__wr {
+  font-size: var(--fs-13);
+  font-weight: var(--fw-medium);
+  font-variant-numeric: tabular-nums;
+  min-width: 40px;
+  text-align: right;
+}
+.ui-wr--high {
+  color: var(--win);
+}
+.ui-wr--mid {
+  color: var(--warn);
+}
+.ui-wr--low {
+  color: var(--loss);
+}
+
+/* --- LineChart --- */
+.ui-linechart {
+  width: 100%;
+  display: block;
+}
+.ui-linechart__line {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.ui-linechart__grid {
+  stroke: var(--border);
+  stroke-width: 1;
+}
+.ui-linechart__dot {
+  fill: var(--accent);
+}
+.ui-linechart__empty {
+  font-size: var(--fs-12);
+  color: var(--text-dim);
+}
+
+/* --- Донат винрейта --- */
+.ui-donut {
+  position: relative;
+  flex-shrink: 0;
+}
+.ui-donut__track {
+  stroke: var(--loss);
+}
+.ui-donut__win {
+  stroke: var(--win);
+  stroke-linecap: butt;
+}
+.ui-donut__center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  pointer-events: none;
+}
+.ui-donut__pct {
+  font-size: var(--fs-20);
+  font-weight: var(--fw-medium);
+  color: var(--win);
+  line-height: 1;
+}
+.ui-donut__games {
+  font-size: var(--fs-11);
+  color: var(--text-muted);
+}
+
+/* --- Мелочи --- */
+.ui-muted {
+  color: var(--text-muted);
+}
+.ui-dim {
+  color: var(--text-dim);
+}
+.ui-error {
+  color: var(--loss);
+  font-size: var(--fs-13);
+}
