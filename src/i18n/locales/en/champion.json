@@ -1,0 +1,30 @@
+{
+  "champion": {
+    "searchPlaceholder": "Champion by name",
+    "emptyHint": "Enter a champion name above — we'll show the win rate, matchups, synergies and items.",
+    "loading": "Loading…",
+    "noCrawlerData": "No crawler data for {{name}} yet. Run the crawler and wait for collection.",
+    "notEnoughData": "Not enough data.",
+    "games": "{{count}} games",
+    "winrate": "Win rate",
+    "pickrate": "Pick rate",
+    "banrate": "Ban rate",
+    "strongAgainst": "Strong against",
+    "weakAgainst": "Weak against",
+    "synergies": "Synergies",
+    "runes": {
+      "title": "Runes",
+      "noData": "No rune data (a re-crawl is required — runes are collected only from new matches).",
+      "keystone": "Keystone",
+      "primaryTree": "Primary tree",
+      "secondaryTree": "Secondary tree"
+    },
+    "build": {
+      "title": "Build path",
+      "boots": "Boots",
+      "noData": "The build order will appear once the crawler processes new matches (order isn't stored for old games).",
+      "slotItem": "Item {{slot}}"
+    },
+    "finalItems": "Common items (final build)"
+  }
+}

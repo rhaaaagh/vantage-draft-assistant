@@ -1,0 +1,8 @@
+{
+  "misc": {
+    "patch": {
+      "label": "Patch",
+      "newSuffix": " (new)"
+    }
+  }
+}

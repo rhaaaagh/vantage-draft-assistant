@@ -1,0 +1,48 @@
+{
+  "profile": {
+    "searchPlaceholder": "Player Riot ID (Name#TAG)",
+    "searchAria": "Search",
+    "loading": "Loading profile…",
+    "emptyTitle": "Enter a Riot ID in the search above",
+    "emptyHint": "For example <0>Name#RU1</0> — we'll show the rank, champion stats and match history.",
+    "errors": {
+      "noApiKey": "Enter your Riot API key in Settings.",
+      "badRiotId": "Enter a Riot ID in the Name#TAG format.",
+      "notFound": "Player not found."
+    },
+    "level": "Level {{level}}",
+    "rank": "Rank",
+    "noRank": "Unranked",
+    "seasonWinrate": "Season win rate",
+    "winShort": "{{count}}W",
+    "lossShort": "{{count}}L",
+    "winLoss": "{{wins}}W / {{losses}}L",
+    "championsRecent": "Champions · recent games",
+    "mastery": "Mastery",
+    "masteryLevel": "Lvl {{level}}",
+    "history": "Match history",
+    "more": "Details →",
+    "blueTeam": "Blue team",
+    "redTeam": "Red team",
+    "form": {
+      "title": "Recent form",
+      "games": "Games",
+      "wins": "Wins",
+      "winrate": "Win rate"
+    },
+    "kdaTrend": "KDA over recent games",
+    "notEnoughGames": "Not enough games",
+    "tiers": {
+      "IRON": "Iron",
+      "BRONZE": "Bronze",
+      "SILVER": "Silver",
+      "GOLD": "Gold",
+      "PLATINUM": "Platinum",
+      "EMERALD": "Emerald",
+      "DIAMOND": "Diamond",
+      "MASTER": "Master",
+      "GRANDMASTER": "Grandmaster",
+      "CHALLENGER": "Challenger"
+    }
+  }
+}

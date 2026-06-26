@@ -1,0 +1,127 @@
+{
+  "match": {
+    "roleShort": {
+      "TOP": "Top",
+      "JUNGLE": "Jng",
+      "MIDDLE": "Mid",
+      "MID": "Mid",
+      "BOTTOM": "Bot",
+      "BOT": "Bot",
+      "UTILITY": "Sup",
+      "SUPPORT": "Sup"
+    },
+    "queue": {
+      "400": "Normal (draft)",
+      "420": "Ranked solo",
+      "430": "Normal",
+      "440": "Ranked flex",
+      "450": "ARAM",
+      "700": "Clash",
+      "fallback": "Queue {{id}}"
+    },
+    "metric": {
+      "gold": "Gold",
+      "xp": "XP",
+      "cs": "CS",
+      "damage": "Damage",
+      "vision": "Vision"
+    },
+    "monster": {
+      "baron": "Baron",
+      "herald": "Rift Herald",
+      "grubs": "Void Grubs",
+      "elder": "Elder Dragon",
+      "dragon": "Dragon",
+      "dragonOf": "{{element}} Dragon",
+      "generic": "Monster",
+      "element": {
+        "fire": "Infernal",
+        "water": "Ocean",
+        "earth": "Mountain",
+        "air": "Cloud",
+        "hextech": "Hextech",
+        "chemtech": "Chemtech"
+      }
+    },
+    "building": {
+      "inhibitor": "Inhibitor",
+      "nexusTower": "Nexus turret",
+      "baseTower": "Base turret",
+      "innerTower": "Inner turret",
+      "outerTower": "Outer turret",
+      "tower": "Turret"
+    },
+    "kp": "{{pct}}% KP",
+    "csPerMin": "{{value}}/min",
+    "dmgPct": "{{pct}}% dmg",
+    "advantageChartAria": "Advantage chart",
+    "runes": {
+      "shards": "Shards"
+    },
+    "panel": {
+      "damageTaken": "Damage taken",
+      "visionScore": "Vision score",
+      "wards": "Wards",
+      "wardsKilledWord": "killed",
+      "controlWards": "Control wards",
+      "runesTitle": "Runes",
+      "buildOrder": "Build order"
+    },
+    "deathMapAria": "Death map",
+    "noDeathPositions": "No death position data.",
+    "legend": {
+      "blueDied": "Blue deaths",
+      "redDied": "Red deaths",
+      "damageDealt": "Damage to champions",
+      "damageTaken": "Damage taken",
+      "blueTeam": "Blue team",
+      "redTeam": "Red team"
+    },
+    "deathFilterAria": "Show kills up to minute",
+    "deathUpTo": "up to {{minute}} min",
+    "deathCount": "{{count}} kills",
+    "damageChart": {
+      "dealtTitle": "Damage to champions: {{value}}",
+      "takenTitle": "Damage taken: {{value}}"
+    },
+    "noObjectives": "No objective data.",
+    "objectiveTitle": "{{time}} — {{label}} ({{side}})",
+    "side": {
+      "blue": "Blue",
+      "red": "Red"
+    },
+    "back": "Back",
+    "breakdownTitle": "Match breakdown",
+    "outcome": {
+      "win": "Victory",
+      "loss": "Defeat"
+    },
+    "header": "{{outcome}} · {{queue}} · {{duration}} · patch {{patch}}",
+    "loading": "Loading match breakdown…",
+    "timingsTitle": "Timings — advantage per minute",
+    "scrubMinute": "{{minute}} min",
+    "teamSnap": "{{side}} · {{total}}",
+    "playerHint": "Tap a player to open their runes and build order.",
+    "damageCardTitle": "Champion damage",
+    "compareCardTitle": "Player comparison by role",
+    "deathMapTitle": "Death map",
+    "objectiveTimelineTitle": "Objective timeline",
+    "team": {
+      "side": {
+        "blue": "Blue team",
+        "red": "Red team"
+      },
+      "totals": "{{kills}} / {{deaths}} / {{assists}} · {{gold}} gold · 🐉{{dragon}} 🦅{{herald}} 🟪{{baron}} 🏰{{tower}}"
+    },
+    "eventsTitle": "Match events",
+    "event": {
+      "kill": "{{killer}} killed {{victim}}",
+      "monster": "{{monster}} — {{side}}",
+      "building": "{{building}}: lost by {{side}}"
+    },
+    "sideGen": {
+      "blue": "Blue",
+      "red": "Red"
+    }
+  }
+}

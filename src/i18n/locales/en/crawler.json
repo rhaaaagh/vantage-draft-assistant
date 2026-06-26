@@ -1,0 +1,18 @@
+{
+  "crawler": {
+    "title": "Statistics crawler",
+    "intro": "Collects matches of top players (Challenger / Grandmaster / Master{{diamond}}) into a local database and computes pairwise champion matchups. Pick recommendations and the overall tier list are built on this data. Speed is ~1400 matches/hour (it also pulls the timeline for item build order). Progress is saved — you can stop and resume.",
+    "introDiamond": " / Diamond",
+    "includeDiamond": "Include Diamond (more data, slower)",
+    "resetDb": "Reset the database and recollect (needed after a schema update)",
+    "targetMatches": "Match target",
+    "resume": "Resume collection",
+    "start": "Start crawler",
+    "stop": "Stop",
+    "etaHelp": "Estimated time to target: ~{{hours}} h. The Riot dev key expires every 24 hours — if the crawler stops with a 401 error, refresh the key in Settings and click \"Resume collection\" (it continues from where it left off). A Personal API Key does not expire.",
+    "needApiKey": "Enter a Riot API key in Settings and save it.",
+    "playersDone": "Players processed",
+    "matchesDone": "Matches collected",
+    "lastError": "Last error: {{error}}"
+  }
+}

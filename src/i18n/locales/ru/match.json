@@ -1,0 +1,127 @@
+{
+  "match": {
+    "roleShort": {
+      "TOP": "Топ",
+      "JUNGLE": "Лес",
+      "MIDDLE": "Мид",
+      "MID": "Мид",
+      "BOTTOM": "Бот",
+      "BOT": "Бот",
+      "UTILITY": "Сап",
+      "SUPPORT": "Сап"
+    },
+    "queue": {
+      "400": "Обычный (драфт)",
+      "420": "Ранкед соло",
+      "430": "Обычный",
+      "440": "Ранкед флекс",
+      "450": "ARAM",
+      "700": "Клэш",
+      "fallback": "Очередь {{id}}"
+    },
+    "metric": {
+      "gold": "Золото",
+      "xp": "Опыт",
+      "cs": "CS",
+      "damage": "Урон",
+      "vision": "Вижн"
+    },
+    "monster": {
+      "baron": "Барон",
+      "herald": "Вестник Бездны",
+      "grubs": "Грибы Бездны",
+      "elder": "Древний дракон",
+      "dragon": "Дракон",
+      "dragonOf": "Дракон {{element}}",
+      "generic": "Монстр",
+      "element": {
+        "fire": "огня",
+        "water": "воды",
+        "earth": "земли",
+        "air": "воздуха",
+        "hextech": "хекстека",
+        "chemtech": "химтеха"
+      }
+    },
+    "building": {
+      "inhibitor": "Ингибитор",
+      "nexusTower": "Башня нексуса",
+      "baseTower": "Базовая башня",
+      "innerTower": "Внутренняя башня",
+      "outerTower": "Внешняя башня",
+      "tower": "Башня"
+    },
+    "kp": "{{pct}}% участия",
+    "csPerMin": "{{value}}/мин",
+    "dmgPct": "{{pct}}% урона",
+    "advantageChartAria": "График преимущества",
+    "runes": {
+      "shards": "Осколки"
+    },
+    "panel": {
+      "damageTaken": "Получено урона",
+      "visionScore": "Вижн-скор",
+      "wards": "Варды",
+      "wardsKilledWord": "снято",
+      "controlWards": "Контроль-варды",
+      "runesTitle": "Руны",
+      "buildOrder": "Порядок покупок"
+    },
+    "deathMapAria": "Карта смертей",
+    "noDeathPositions": "Нет данных о позициях смертей.",
+    "legend": {
+      "blueDied": "Погибли синие",
+      "redDied": "Погибли красные",
+      "damageDealt": "Урон по чемпионам",
+      "damageTaken": "Полученный урон",
+      "blueTeam": "Синяя команда",
+      "redTeam": "Красная команда"
+    },
+    "deathFilterAria": "Показать убийства до минуты",
+    "deathUpTo": "до {{minute}} мин",
+    "deathCount": "{{count}} убийств",
+    "damageChart": {
+      "dealtTitle": "Урон по чемпионам: {{value}}",
+      "takenTitle": "Полученный урон: {{value}}"
+    },
+    "noObjectives": "Нет данных об объектах.",
+    "objectiveTitle": "{{time}} — {{label}} ({{side}})",
+    "side": {
+      "blue": "Синие",
+      "red": "Красные"
+    },
+    "back": "Назад",
+    "breakdownTitle": "Разбор матча",
+    "outcome": {
+      "win": "Победа",
+      "loss": "Поражение"
+    },
+    "header": "{{outcome}} · {{queue}} · {{duration}} · патч {{patch}}",
+    "loading": "Загрузка разбора матча…",
+    "timingsTitle": "Тайминги — преимущество по минутам",
+    "scrubMinute": "{{minute}} мин",
+    "teamSnap": "{{side}} · {{total}}",
+    "playerHint": "Нажми на игрока, чтобы открыть его руны и порядок покупок.",
+    "damageCardTitle": "Урон чемпионов",
+    "compareCardTitle": "Сравнение игроков по ролям",
+    "deathMapTitle": "Карта смертей",
+    "objectiveTimelineTitle": "Таймлайн объектов",
+    "team": {
+      "side": {
+        "blue": "Синяя команда",
+        "red": "Красная команда"
+      },
+      "totals": "{{kills}} / {{deaths}} / {{assists}} · {{gold}} зол. · 🐉{{dragon}} 🦅{{herald}} 🟪{{baron}} 🏰{{tower}}"
+    },
+    "eventsTitle": "События матча",
+    "event": {
+      "kill": "{{killer}} убил {{victim}}",
+      "monster": "{{monster}} — {{side}}",
+      "building": "{{building}}: пала у {{side}}"
+    },
+    "sideGen": {
+      "blue": "Синих",
+      "red": "Красных"
+    }
+  }
+}

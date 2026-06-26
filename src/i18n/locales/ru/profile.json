@@ -1,0 +1,48 @@
+{
+  "profile": {
+    "searchPlaceholder": "Riot ID игрока (Имя#TAG)",
+    "searchAria": "Найти",
+    "loading": "Загрузка профиля…",
+    "emptyTitle": "Введите Riot ID в поиске выше",
+    "emptyHint": "Например <0>Имя#RU1</0> — покажем ранг, статистику по чемпионам и историю игр.",
+    "errors": {
+      "noApiKey": "Введите Riot API ключ в Настройках.",
+      "badRiotId": "Введите Riot ID в формате Имя#TAG.",
+      "notFound": "Игрок не найден."
+    },
+    "level": "Уровень {{level}}",
+    "rank": "Ранг",
+    "noRank": "Без ранга",
+    "seasonWinrate": "Винрейт сезона",
+    "winShort": "{{count}}В",
+    "lossShort": "{{count}}П",
+    "winLoss": "{{wins}}В / {{losses}}П",
+    "championsRecent": "Чемпионы · последние игры",
+    "mastery": "Мастерство",
+    "masteryLevel": "Ур. {{level}}",
+    "history": "История игр",
+    "more": "Подробнее →",
+    "blueTeam": "Синяя команда",
+    "redTeam": "Красная команда",
+    "form": {
+      "title": "Форма последних игр",
+      "games": "Игр",
+      "wins": "Побед",
+      "winrate": "Винрейт"
+    },
+    "kdaTrend": "KDA по последним играм",
+    "notEnoughGames": "Недостаточно игр",
+    "tiers": {
+      "IRON": "Железо",
+      "BRONZE": "Бронза",
+      "SILVER": "Серебро",
+      "GOLD": "Золото",
+      "PLATINUM": "Платина",
+      "EMERALD": "Изумруд",
+      "DIAMOND": "Алмаз",
+      "MASTER": "Мастер",
+      "GRANDMASTER": "Грандмастер",
+      "CHALLENGER": "Челленджер"
+    }
+  }
+}

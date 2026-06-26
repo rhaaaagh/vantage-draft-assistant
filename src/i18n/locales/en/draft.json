@@ -1,0 +1,112 @@
+{
+  "draft": {
+    "manualModeHint": "Manual mode below — use it if the live draft was detected incorrectly.",
+
+    "live": {
+      "titleLive": "Live draft — recommendations (from the LoL client)",
+      "titleFrozen": "Last draft (until the next one starts)",
+      "frozenHint": "Draft finished — showing recommendations from the last champion select. They will refresh automatically when the next draft starts.",
+      "frozenRole": " Role: {{role}}.",
+      "myRole": "My role",
+      "roleAuto": "Role detected automatically: {{role}}.",
+      "roleUnknown": "Role not detected from the client — pick it manually above.",
+      "roleManual": "Role selected manually: {{role}}.",
+      "noRecs": "No recommendations yet — choose a role or wait for data on this patch.",
+      "build": "Build — {{champion}}",
+      "buildStart": "Starting items",
+      "buildBoots": "Boots",
+      "buildOrder": "Order",
+      "gamesTooltip": "{{count}} games"
+    },
+
+    "currentMatch": {
+      "title": "Current match",
+      "help": "After the game starts, click \"Refresh\" — the app will detect the active game by the account from the client and show team compositions and ranks (a Riot API key in Settings is required). The Spectator API sees the game ~1–2 minutes after it starts — if there's \"no game\", wait a minute and refresh.",
+      "loading": "Loading…",
+      "autoRefresh": "Auto-refresh (once a minute)",
+      "noApiKey": "Enter a Riot API key in Settings and save.",
+      "noGame": "No active game right now. Start a match, wait a minute and click \"Refresh\".",
+      "myTeam": "My team",
+      "enemyTeam": "Enemy team",
+      "noData": "No data"
+    },
+
+    "pickHelper": {
+      "title": "Pick suggestions",
+      "myRole": "My role",
+      "enemies": "Enemies",
+      "allies": "Allies",
+      "championPlaceholder": "Champion…",
+      "empty": "empty",
+      "remove": "Remove",
+      "compute": "Computing…",
+      "showRecs": "Show recommendations",
+      "noRecs": "No data for recommendations in this role — the crawler collected too few matches. Run a crawl and try again later."
+    },
+
+    "assistant": {
+      "welcomeTitle": "Your LoL draft assistant",
+      "welcomeText": "Picks and bans are pulled from the client automatically. Recommendations are built on collected match statistics — sync it in Settings.",
+      "currentDraft": "Current draft",
+      "autoRefresh": "Auto-refresh",
+      "loading": "Loading…",
+      "refreshDraft": "Refresh draft",
+      "recommendations": "Recommendations",
+      "analytics": "Draft analytics",
+      "simulator": "Pick simulator",
+      "simulatorHelp": "Evaluating picks by match statistics. While the stats aren't collected (Stage 2), the simulator shows \"no data\".",
+      "championIds": "Champion IDs (comma-separated)",
+      "invalidIds": "Enter at least one valid champion ID.",
+      "simulating": "Simulating…",
+      "simulate": "Simulate",
+      "noWinStats": "Win chance isn't computed yet — no match statistics. It will appear after data is collected (Stage 2).",
+      "currentDraftWin": "Current draft: <strong>{{percent}}%</strong> chance to win.",
+      "pickEntry": "Pick {{champion}} (#{{id}}) →",
+      "noData": "no data"
+    },
+
+    "recommendations": {
+      "noStats": "Not enough data for pick recommendations. Sync matches in Settings — statistics are collected from real games; without them, no advice is shown.",
+      "bestPicks": "Best picks",
+      "worstPicks": "Worst picks",
+      "winrateStat": "{{winrate}}% WR · {{games}} games",
+      "buildsFor": "Builds for {{champion}}",
+      "noBuildData": "— no data —",
+      "itemFallback": "Item {{id}}",
+      "bestByWinrate": "Best by winrate",
+      "mostPopular": "Most popular",
+      "vsEnemy": "Against current enemies (by damage type)"
+    },
+
+    "analytics": {
+      "winChance": "Win chance",
+      "myTeam": "Your team:",
+      "enemyTeam": "Enemy team:",
+      "synergy": "Synergy",
+      "synergyLine": "Yours: {{blue}}% · Enemies: {{red}}%",
+      "noWinSynergy": "Win chance and synergy will appear after match statistics are collected (Stage 2).",
+      "damageMyTeam": "Damage type — your team",
+      "damageEnemy": "Damage type — enemies",
+      "damageLine": "AD: {{ad}}% · AP: {{ap}}%",
+      "highAdMine": "Lots of AD — enemies may build armor.",
+      "highApMine": "Lots of AP — enemies may build MR.",
+      "highAdEnemy": "Lots of AD on enemies — build armor.",
+      "highApEnemy": "Lots of AP on enemies — build MR.",
+      "damageNote": "Damage type — an estimate from Data Dragon ratings, not real damage shares.",
+      "weaknessesMine": "Your team's weaknesses",
+      "weaknessesEnemy": "Enemy team's weaknesses",
+      "noWeaknesses": "No clear weaknesses."
+    },
+
+    "draftView": {
+      "noDraftData": "No draft data. Click \"Refresh draft\" or \"Check LCU\" in settings.",
+      "notChampSelect": "Not in champion select. Open the draft in the client and click \"Refresh draft\".",
+      "bannedInDraft": "Banned in draft:",
+      "myTeam": "Your team",
+      "enemyTeam": "Enemy team",
+      "noTeamData": "No team data. Click \"Refresh draft\".",
+      "bans": "Bans:",
+      "notPicked": "Not picked yet"
+    }
+  }
+}

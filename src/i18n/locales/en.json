@@ -1,0 +1,85 @@
+{
+  "app": {
+    "name": "Vantage Draft Assistant"
+  },
+  "nav": {
+    "draft": "Draft / Match",
+    "scout": "Scout",
+    "profile": "Profile",
+    "tier": "Tier list",
+    "champion": "Champion",
+    "crawler": "Crawler",
+    "settings": "Settings"
+  },
+  "common": {
+    "save": "Save",
+    "saved": "Saved",
+    "saving": "Saving…",
+    "loading": "Loading…",
+    "refresh": "Refresh",
+    "checking": "Checking…",
+    "noData": "No data"
+  },
+  "roles": {
+    "TOP": "Top",
+    "JUNGLE": "Jungle",
+    "MID": "Mid",
+    "MIDDLE": "Mid",
+    "BOT": "Bot",
+    "BOTTOM": "Bot",
+    "SUPPORT": "Support",
+    "UTILITY": "Support"
+  },
+  "settings": {
+    "language": {
+      "title": "Language",
+      "label": "Interface language",
+      "help": "Choose the interface language. English is the default. The app remembers your choice."
+    },
+    "riotApi": {
+      "title": "Riot API",
+      "keyLabel": "Riot API Key",
+      "keyHelp": "The key is used only locally to load match stats (Emerald+ ranks), the tier list and the current match. Get a key at developer.riotgames.com → API Keys. A development key lasts 24 hours; on 401, create a new one. On 403, open your app on the Riot portal, enable the LoL products (Summoner, Match, Spectator, League, etc.), save and create a new key if needed.",
+      "riotIdLabel": "Riot ID",
+      "riotIdHelp": "Full Riot ID with the tag (as in the client, e.g. Player#RU1). Plain summoner names no longer work in the Riot API.",
+      "riotIdPlaceholder": "Name#RU1",
+      "save": "Save settings",
+      "sync": "Sync matches (Emerald+)",
+      "syncing": "Syncing…",
+      "synced": "Synced matches: {{count}} (Emerald+).",
+      "regionLabel": "Region",
+      "invalidRiotId": "Riot ID must be in the Name#TAG format (e.g. Player#RU1).",
+      "savedOk": "Settings saved.",
+      "saveFailed": "Couldn't save settings: {{error}}"
+    },
+    "lcu": {
+      "title": "LCU / draft",
+      "help": "Ban and pick data is read from your PC via the local client API (LCU). If the draft doesn't update in the app, click \"Check LCU\" (best during champion select).",
+      "check": "Check LCU",
+      "draftLoaded": "Draft loaded.",
+      "draftParseFailed": "Couldn't parse the draft.",
+      "draftLoadError": "Draft load error.",
+      "leaguePathLabel": "League of Legends folder path",
+      "leaguePathHelp": "If League is installed in a non-standard folder, set the path to the folder containing the lockfile (next to LeagueClient.exe). Leave empty for auto-detection of standard paths.",
+      "savePath": "Save path"
+    },
+    "window": {
+      "title": "Window",
+      "desktopOnly": "Window settings (always-on-top, position and size) are available only in the desktop app.",
+      "alwaysOnTop": "Always on top",
+      "boundsHelp": "Window position and size are saved on move and close. You can also save now:",
+      "saveBounds": "Save position and size"
+    },
+    "debug": {
+      "title": "Riot API debug",
+      "help": "Checks the whole Riot API chain for any Riot ID — your own game isn't needed. Use a challenger who is in a match right now (visible on op.gg), e.g. Name#RU1.",
+      "riotIdLabel": "Riot ID to check",
+      "run": "Check Riot API",
+      "enterRiotId": "Enter a Riot ID in the Name#TAG format.",
+      "enterKey": "Enter the Riot API key above first.",
+      "checkingChain": "Checking: Account-V1 → Spectator-V5 → League-V4…",
+      "noGame": "Account found, no active game — Account-V1 and Spectator-V5 work.",
+      "gameFound": "Game found! All three APIs work. Players: {{names}}"
+    }
+  }
+}

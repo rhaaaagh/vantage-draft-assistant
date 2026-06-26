@@ -1,0 +1,21 @@
+{
+  "tier": {
+    "title": "Champion tier list",
+    "subtitle": "Meta tier list from Crawler data (Challenger/GM/Master/Diamond), current patch only. Click a column header to sort (a second click flips the direction).",
+    "patch": "Patch:",
+    "allPatches": "All patches",
+    "role": "Role:",
+    "allRoles": "All roles",
+    "loading": "Loading…",
+    "refresh": "Refresh",
+    "empty": "No data. Run the \"Crawler\" section to collect match stats — the tier list is built from them.",
+    "col": {
+      "champion": "Champion",
+      "role": "Role",
+      "patch": "Patch",
+      "games": "Games",
+      "winrate": "Win rate"
+    },
+    "openPage": "Open page: {{name}}"
+  }
+}
