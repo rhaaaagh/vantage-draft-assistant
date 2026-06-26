@@ -573,7 +573,7 @@ fn analyze_draft(draft: DraftState) -> DraftAnalysisResult {
                         if !build_aggs.is_empty() {
                             // Лучшая по винрейту — первая, самая популярная — с наибольшим games.
                             let mut by_popularity = build_aggs.clone();
-                            by_popularity.sort_by(|a, b| b.games.cmp(&a.games));
+                            by_popularity.sort_by_key(|b| std::cmp::Reverse(b.games));
 
                             let best_wr_build = &build_aggs[0];
                             let popular_build = &by_popularity[0];

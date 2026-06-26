@@ -233,7 +233,7 @@ pub fn fetch_profile_impl(
             wins: w,
         })
         .collect();
-    per_champion.sort_by(|a, b| b.games.cmp(&a.games));
+    per_champion.sort_by_key(|b| std::cmp::Reverse(b.games));
 
     Ok(ProfileResponse {
         found: true,

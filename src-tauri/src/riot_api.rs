@@ -772,7 +772,7 @@ pub fn fetch_champion_mastery(
         .into_iter()
         .map(|m| (m.champion_id, m.champion_level, m.champion_points))
         .collect();
-    out.sort_by(|a, b| b.2.cmp(&a.2));
+    out.sort_by_key(|b| std::cmp::Reverse(b.2));
     Ok(out)
 }
 
