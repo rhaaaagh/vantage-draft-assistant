@@ -110,6 +110,8 @@ tuned to the read queries. WAL mode is enabled for concurrent crawler writes.
 - **Backend** (`src-tauri/src/`) owns all networking, the crawler, the engines, and
   the database. The local SQLite DB lives in the OS app-data directory, not the repo.
 
+📐 Full breakdown and design decisions: **[ARCHITECTURE.md](ARCHITECTURE.md)**.
+
 ---
 
 ## Getting started
