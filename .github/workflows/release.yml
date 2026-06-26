@@ -1,0 +1,48 @@
+name: Release
+
+# Запускается только при пуше тега версии, например:
+#   git tag v0.3.1 && git push origin v0.3.1
+# Собирает Windows-установщик (NSIS) и кладёт его в черновик GitHub Release.
+on:
+  push:
+    tags:
+      - 'v*'
+
+# Нужно, чтобы action мог создать релиз и загрузить в него файлы.
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Build Windows installer
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+
+      - name: Install dependencies
+        run: npm ci
+
+      # tauri-action сам запускает beforeBuildCommand (npm run build), собирает
+      # приложение и установщик, создаёт релиз и прикладывает артефакты.
+      - uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tagName: ${{ github.ref_name }}
+          releaseName: Vantage Draft Assistant ${{ github.ref_name }}
+          releaseBody: |
+            Download the Windows installer below and run it.
+            No Rust/Node required — see the `*-setup.exe` asset.
+          releaseDraft: true
+          prerelease: false
