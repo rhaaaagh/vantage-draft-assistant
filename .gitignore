@@ -1,0 +1,46 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Rust build artifacts
+/src-tauri/target
+target
+
+# Runtime/log artifacts
+src-tauri/lol_draft_assistant_log.txt
+lol-draft-assistant@0.0.0
+
+# Local tooling / worktrees
+.claude/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Локальная БД краулера (рантайм живёт в AppData; этот — дев-leftover)
+src-tauri/lol_stats.db
+*.db
+*.sqlite
+*.sqlite3
+
+# Дампы сессий/отладки LCU (содержат личные данные игроков)
+lcu_session_debug.json
+*session*debug*.json
+src-tauri/*_debug.json

@@ -1,0 +1,18 @@
+[package]
+name = "lol-draft-assistant"
+version = "0.3.0"
+description = "Vantage Draft Assistant Tauri backend"
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "2.0.0", features = [] }
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tauri = { version = "2.0.0", features = [] }
+reqwest = { version = "0.12.5", default-features = false, features = ["json", "rustls-tls", "blocking"] }
+base64 = "0.22.1"
+rusqlite = { version = "0.31.0", features = ["bundled"] }
+urlencoding = "2.1.3"
+

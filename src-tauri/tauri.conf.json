@@ -1,0 +1,49 @@
+{
+  "productName": "Vantage Draft Assistant",
+  "identifier": "com.vantage.draft-assistant",
+  "version": "0.3.0",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build",
+    "devUrl": "http://localhost:5173",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Vantage Draft Assistant",
+        "width": 1280,
+        "height": 800,
+        "minWidth": 1100,
+        "minHeight": 720,
+        "maxWidth": 1600,
+        "maxHeight": 1000,
+        "center": true,
+        "resizable": true,
+        "maximizable": false,
+        "fullscreen": false,
+        "dragDropEnabled": false
+      }
+    ]
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "windows": {
+      "certificateThumbprint": null,
+      "digestAlgorithm": "sha256",
+      "timestampUrl": ""
+    },
+    "longDescription": "Ассистент драфта для League of Legends: анализ пиков и банов, рекомендации сборок, оценка драфта.",
+    "shortDescription": "Vantage Draft Assistant",
+    "category": "Game"
+  }
+}
+
