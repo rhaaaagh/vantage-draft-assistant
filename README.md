@@ -127,11 +127,17 @@ npm run tauri build    # build installer / .exe
 
 The app runs on **your** key — nothing is sent to third-party servers.
 
-1. Get a key at [developer.riotgames.com](https://developer.riotgames.com) → **API Keys**.
+📖 **Step-by-step with screenshots: [docs/RIOT_API_KEY.md](docs/RIOT_API_KEY.md)**
+
+Quick version:
+
+1. Get a key at [developer.riotgames.com](https://developer.riotgames.com) (sign in
+   with your Riot account).
 2. In the app: **Settings** → **Riot API Key** → paste → **Save settings**.
 3. Set your **region** (RU, EUW, NA…) and, if needed, the path to your League folder.
 4. On a **403**, enable the LoL products on the portal (Summoner, Match, Spectator,
-   League…) and generate a new key. A development key lasts 24 hours.
+   League…) and generate a new key. A development key lasts 24 hours; register a
+   **Personal** key for everyday use.
 
 ---
 
